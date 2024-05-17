@@ -95,9 +95,9 @@ function App() {
       <button onClick={resetGame}>Resetear juego</button>
       <section className='game'>
         {
-          board.map((_, index) =>
+          board.map((square, index) =>
             <Square key={index} updateBoard={updateBoard} index={index}>
-              {board[index]}
+              {square}
             </Square>
           )
         }
