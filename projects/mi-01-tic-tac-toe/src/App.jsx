@@ -44,34 +44,31 @@ function App() {
   const [winner, setWinner] = useState(null)
 
   const resetGame = () => {
-    setBoard(Array(9).fill(null))
     setTurn(TURNS.X)
+    setBoard(Array(9).fill(null))
     setWinner(null)
   }
 
-  const checkEndGame = (newBoard) => {
-    return newBoard.every((square) => square !== null)
-  }
-
   const checkWinner = (boardToCheck) => {
-    for(const combo of WINNER_COMBOS) {
+    for (const combo of WINNER_COMBOS) {
       const [a, b, c] = combo
-      if(
+      if (
         boardToCheck[a] &&
         boardToCheck[a] === boardToCheck[b] &&
         boardToCheck[a] === boardToCheck[c]
       ) {
-        return boardToCheck[a]
-      }
-    }
-    return null
+          return boardToCheck[a]
+        }
+    } return null
   }
 
-
+  const checkEndGame = (boardToCheck) => {
+    return boardToCheck.every((square) => square !== null)
+  }
 
   function updateBoard(index) {
 
-    if (board[index]) return
+    if(board[index]) return
 
     const newBoard = [...board]
     newBoard[index] = turn
@@ -81,7 +78,7 @@ function App() {
     setTurn(newTurn)
 
     const newWinner = checkWinner(newBoard)
-    if(newWinner) {
+    if (newWinner) {
       setWinner(newWinner)
     } else if (checkEndGame(newBoard)) {
       setWinner(false)
@@ -92,7 +89,7 @@ function App() {
   
     <main className='board'>
       <h1>Mi Tic Tac Toe</h1>
-      <button onClick={resetGame}>Resetear juego</button>
+      <button onClick={resetGame}>Reset del juego</button>
       <section className='game'>
         {
           board.map((square, index) =>
@@ -112,7 +109,7 @@ function App() {
         winner !== null && (
           <section className='winner'>
             <div className='text'>
-              <h2>
+              <h2 className='text'>
                 {winner ? 'Ganó' : 'Empate'}
               </h2>
 
@@ -121,11 +118,12 @@ function App() {
               </header>
 
               <footer>
-                <button onClick={resetGame}>Empezar de nuevo</button>
+                <button onClick={resetGame}>Nuevo juego</button>
               </footer>
-            </div>          
+
+            </div>
           </section>
-        ) 
+        )
       }
 
     </main>
