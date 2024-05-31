@@ -1,0 +1,33 @@
+#root {
+  width: 100%;
+}
+
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 80vh;
+  margin-top: 20px;
+}
+
+.shape-form {
+  margin: 50px 20px;
+  font-size: 32px;
+}
+
+.shape-form div {
+  margin: 10px 0;
+}
+
+input {
+  font-size: 32px;
+  margin-left: 10px;
+}
+
+#shape {
+  font-size: 32px;
+  margin-left: 10px;
+}
