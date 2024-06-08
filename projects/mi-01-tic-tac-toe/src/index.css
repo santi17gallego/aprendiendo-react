@@ -75,8 +75,8 @@ body {
 
 .turn .square,
 .winner .square {
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
   pointer-events: none;
   border-color: transparent;
 }
@@ -99,7 +99,7 @@ body {
 
 .winner .text {
   background: #111;
-  height: 360px;
+  height: 300px;
   width: 320px;
   border: 2px solid #eee;
   border-radius: 10px;
@@ -120,8 +120,8 @@ body {
 }
 
 .square {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border: 2px solid #eee;
   border-radius: 5px;
   display: grid;
